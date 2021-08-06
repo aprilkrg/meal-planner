@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 
 app.use(session({
-  secret: 'ILovePlanning',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));
