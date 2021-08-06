@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,15 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title>MealPlan</title>
 </head>
+
 <body>
   <nav>
-    <a href="/meals/new">ADD MEAL</a> 
-    <a href="/meals">GROCERY LIST</a>
     <a href="/">HOME</a>
-    <% if (user) { %>
-      <a href="/logout">LOGOUT</a>
-    <% } else { %>
-      <a href="/auth/google">LOGIN</a>
-    <% } %>
+    <a href="/meals/new">ADD MEAL</a>
+    <a href="/meals">GROCERY LIST</a>
+    <a href="/register">REGISTER</a>
+    <a href="/login">LOGIN</a>
+    <a href="/logout">LOGOUT</a>
+
   </nav>
   <main>
-
-<% if (user) { %>
-
-<% } else { %>
-  <p>Login with Google to access your meals and grocery list!</p>
-<% } %>
-  
