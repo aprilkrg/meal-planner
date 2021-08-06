@@ -11,6 +11,7 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
+const PORT = process.env.PORT || 4000;
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -60,6 +61,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(PORT, function(){
+  console.log(`Server is running at ${PORT}`)
 });
 
 module.exports = app;
