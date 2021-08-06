@@ -1,13 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+const mongoUrl = process.env.MONGODB_UI || "mongodb://localhost:27017/meal-planner";
+
+mongoose.connect(mongoUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
-const db = mongoose.connection;
-
-db.on('connected', function () {
-  console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
+mongoose.connection.on("connected", () => {
+  console.log("MongoDB is connected");
 });
+mongoose.connection.on("error", () => {
+  console.log("MongoDB has an error");
+});
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB is disconnected");
+});
+
