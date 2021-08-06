@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "dev": "open https://localhost/4000 && nodemon"
+    "dev": "open http://localhost:4000 && nodemon"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
